@@ -23,4 +23,4 @@ export default Page
 
 //Ben products altındaki page.jsx sayfasını silersem ve utantılara gidersem hata alamam. Ama özellikle products sayfasına gidersem hatala alırım. O yüzden biz [[...id]] yapmalıyım ki id nin altındaki page.jsx sayfasını kullanabileyim. Bu sayede ortak page kullanarak fazla dosya kullanımından ve karmaşadan uzaklaşmış oluyoruz.
 
-//Artık biz 
+//Bizim app altında oluşturduğumuz her uzantı bir url. biz yorumsatırı diye bir klasör oluştursak ve içerisine products dosyamızı atarsak bizim tarayıcı üzerinden artık localhost:3000/yorumsatiri/product şeklinde gitmemiz gerekir. Biz url de yorumsatiri yazının görünmemesini istiyorsak klasörü (yorumsatiri) şeklinde normal paranteze almamız yeterli olacaktır. artık biz url mize localhost:3000/erkan şeklinde erişebilirim yorumsatiri klasörüde sadece saklama klasörü işlevi görecektir.
