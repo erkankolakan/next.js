@@ -22,3 +22,5 @@ export default Page
 //Biz localhos:300/products/2 şeklinde bir statik birde dinamik bir şekilde root oluşturduk. peki biz localhos:300/products/2/1/2/3/1/3 şeklinde birden fazla dinamik rooute oluşturmak isteseydik. spreade operatörünü kullanarak devam edebiliridk. Bunu da [...id] şeklinde kullanacaktık.
 
 //Ben products altındaki page.jsx sayfasını silersem ve utantılara gidersem hata alamam. Ama özellikle products sayfasına gidersem hatala alırım. O yüzden biz [[...id]] yapmalıyım ki id nin altındaki page.jsx sayfasını kullanabileyim. Bu sayede ortak page kullanarak fazla dosya kullanımından ve karmaşadan uzaklaşmış oluyoruz.
+
+//Artık biz 
