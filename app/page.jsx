@@ -1,10 +1,14 @@
 import React from 'react'
 import Link from 'next/link'
-import about from './about/page'
+import Image from 'next/image'
+
+
 
 const Page = () => {
+ 
   return (
     <>
+    
       <Link href="/about" >Yöndendirme Link denemesi</Link> <br/>
       <Link href={{pathname:"about"}} >Yöndendirme Link denemesi 1</Link> <br/>
 
@@ -24,8 +28,12 @@ const Page = () => {
           name:"berkant",
           surname:"kaya"
         }
-      }} >Yöndendirme Link denemesi 4</Link>
+      }} >Yöndendirme Link denemesi 4</Link> <br/>
 
+-----------------------------------------------------------------------------------------------------------------------
+      <Image
+      src="https://images.pexels.com/photos/12825186/pexels-photo-12825186.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      width={400} height={400} />
     </>
   )
 }
@@ -58,3 +66,22 @@ export default Page
 //<Link href="/about?name=berkant&surname=kaya" >Yöndendirme Link denemesi 2</Link><br/> //çoklu query yönlendirmelerinide bu şeklide yapabliriz
 // queriy olayını obje şeklinde <Link href={{pathname:"about", query:{name:"berkant"}} >Yöndendirme Link denemesi 3</Link> şeklinde kullanarak da yapabiliriz.
 //çoklu queriy olayını obje şeklinde kullanmak istersem <Link href={{pathname:"about", query:{name:"berkant" ,surname:kaya}} >Yöndendirme Link denemesi 3</Link> şeklinde kullanabilirim. 
+
+//Image
+//Normal html deki gibi <img src="" /> kullanabiliriz ama next.js in bize tavsiyesi Image kullanmak. Image kullanırsak sayfamız daha üst sıralarda çıkar ve senkrinazsyonu da artar.
+
+//!! Biz eğer dosyalarmızı arasına yüklediğimiz bir dosyayı çağırıyorsak bizim herhangi bir parametre kullanmamız gerekmez ama biz internet üzerinden bir fotoğraf çekiyorsak width ve height değerlerini kullanmamız gerekir. Ayrıca internet üzerinden çektiğimiz fotoğrafların protokolü olduğu için onları bizim next.config.js dosyasında belirtmen lazım. Onu da aşağıdaki gibi kullanıyoruz.
+/*
+   images: {
+  remotePatterns: [
+    {
+      protocol: 'https',
+      hostname: 'images.pexels.com',
+      port: '',
+      pathname: '/photos/12825186/pexels-photo-12825186.png',
+    },
+  ],
+}
+*/
+// Eğer biz width ve height değerlerini kullanmak istemiyorsak en azından fill değerini kullanmamız gerekir. Fill kullanırsak sayfanın tamamını kaplar. Biz Image yi bir divle sarmalayarak revize etmemiz işimize yarayabilir.
+
