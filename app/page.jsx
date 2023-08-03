@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Inter , Roboto } from 'next/font/google'
+import {cookies} from 'next/headers'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -18,6 +19,12 @@ const roboto = Roboto({
 
 
 const Page = () => {
+
+  const newCookies = cookies();
+
+  console.log(newCookies.getAll())
+
+  // newCookies.set('kolakan' , 21) şuan nextjs de bu işlemleri yapamıyoruz ama yakında gelecek.
  
   return (
     <>
@@ -43,15 +50,17 @@ const Page = () => {
         }
       }} >Yöndendirme Link denemesi 4</Link> <br/>
 
------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
       <Image
       src="https://images.pexels.com/photos/12825186/pexels-photo-12825186.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
       width={400} height={400} />
 
-------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
     <div className={inter.className}>Inter yazı tipi</div>
   
     <div className={roboto.className}>Roboto yazı tipi</div>
+    
+
 
 
 
@@ -129,6 +138,23 @@ FONT kullanımı
   <div className={inter.className} >Falan Filan</div>
 
 COOKİES kullanımı
+  cookie localstorageden daha kullanışlı olduğu için kullanmak istiyoruz.
+  bizim cookiesleri kullanmak için ilk önce impoprt etmeli daha sonra başka bir değişkene atamalı, daha sonra da değişken değeri üzerinden değer çekmeli veya göndermeliyiz.
+
+  import {cookies} from 'next/headers'
+
+   const newCookies = cookies();
+  
+  console.log(newCookies.getAll())
+
+getAll() dersek tüm cookiesileri getirir. Sadece cookieslerden birini seçmek istersek. 
+  console.log(newCookies.get(xxxxx)) yazmamız yeterli olacaktır.
+  console.log(newCookies.get(xxxxx).value) yazmamız da bize value değerini verecektir.
+
+  set işlemleri de aşağıdaki gibi yapılıyor.
+
+  newCookies.set("xxx", 20) yazarsak biz cookies kısmına 20 değerine sahip xxx değerini göndericektim.
+
   
 
 
