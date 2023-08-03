@@ -84,4 +84,4 @@ export default Page
 }
 */
 // Eğer biz width ve height değerlerini kullanmak istemiyorsak en azından fill değerini kullanmamız gerekir. Fill kullanırsak sayfanın tamamını kaplar. Biz Image yi bir divle sarmalayarak revize etmemiz işimize yarayabilir.
-
+    
