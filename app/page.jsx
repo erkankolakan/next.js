@@ -1,7 +1,20 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { Inter , Roboto } from 'next/font/google'
 
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  //fontun çeşitli özelliklerini vermek durumundayız.
+})
+
+const roboto = Roboto({
+  weight: '900',
+  subsets: ['latin'],
+  display: 'swap',
+  //her yazı tipi için ayrı bir class oluşturmak gerekiyor. 
+})
 
 
 const Page = () => {
@@ -9,7 +22,7 @@ const Page = () => {
   return (
     <>
     
-      <Link href="/about" >Yöndendirme Link denemesi</Link> <br/>
+      <Link href="/about" className={inter.className} >Yöndendirme Link denemesi</Link> <br/>
       <Link href={{pathname:"about"}} >Yöndendirme Link denemesi 1</Link> <br/>
 
       <Link href="/about?name=berkant" >Yöndendirme Link denemesi 2</Link> <br/>
@@ -34,6 +47,20 @@ const Page = () => {
       <Image
       src="https://images.pexels.com/photos/12825186/pexels-photo-12825186.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
       width={400} height={400} />
+
+------------------------------------------------------------------------------------------------------------------------
+    <div className={inter.className}>Inter yazı tipi</div>
+  
+    <div className={roboto.className}>Roboto yazı tipi</div>
+
+
+
+
+
+
+
+
+
     </>
   )
 }
@@ -84,4 +111,39 @@ export default Page
 }
 */
 // Eğer biz width ve height değerlerini kullanmak istemiyorsak en azından fill değerini kullanmamız gerekir. Fill kullanırsak sayfanın tamamını kaplar. Biz Image yi bir divle sarmalayarak revize etmemiz işimize yarayabilir.
-    
+
+//Font ve cookies kullanımı
+/*
+FONT kullanımı
+
+  import { Inter , Roboto } from 'next/font/google' 
+  
+  const roboto = Roboto({
+  weight: '900',
+  subsets: ['latin'],
+  display: 'swap',
+  //her yazı tipi için ayrı bir class oluşturmak gerekiyor. 
+})
+üsteki gibi import etmeli ve class oluşturmalı ve daha sonra aşağıdaki gibi kullanmalıyız.
+
+  <div className={inter.className} >Falan Filan</div>
+
+COOKİES kullanımı
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
+
