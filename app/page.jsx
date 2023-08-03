@@ -1,10 +1,32 @@
 import React from 'react'
+import Link from 'next/link'
+import about from './about/page'
 
 const Page = () => {
   return (
-    <div>
-      page
-    </div>
+    <>
+      <Link href="/about" >Yöndendirme Link denemesi</Link> <br/>
+      <Link href={{pathname:"about"}} >Yöndendirme Link denemesi 1</Link> <br/>
+
+      <Link href="/about?name=berkant" >Yöndendirme Link denemesi 2</Link> <br/>
+      <Link href="/about?name=berkant&surname=kaya" >Yöndendirme Link denemesi 2</Link><br/> 
+
+      <Link href={{
+        pathname:"about",
+        query:{
+          name:"berkant"
+        }
+      }} >Yöndendirme Link denemesi 3</Link> <br/>
+
+<Link href={{
+        pathname:"about",
+        query:{
+          name:"berkant",
+          surname:"kaya"
+        }
+      }} >Yöndendirme Link denemesi 4</Link>
+
+    </>
   )
 }
 
@@ -24,3 +46,15 @@ export default Page
 //Ben products altındaki page.jsx sayfasını silersem ve utantılara gidersem hata alamam. Ama özellikle products sayfasına gidersem hatala alırım. O yüzden biz [[...id]] yapmalıyım ki id nin altındaki page.jsx sayfasını kullanabileyim. Bu sayede ortak page kullanarak fazla dosya kullanımından ve karmaşadan uzaklaşmış oluyoruz.
 
 //Bizim app altında oluşturduğumuz her uzantı bir url. biz yorumsatırı diye bir klasör oluştursak ve içerisine products dosyamızı atarsak bizim tarayıcı üzerinden artık localhost:3000/yorumsatiri/product şeklinde gitmemiz gerekir. Biz url de yorumsatiri yazının görünmemesini istiyorsak klasörü (yorumsatiri) şeklinde normal paranteze almamız yeterli olacaktır. artık biz url mize localhost:3000/erkan şeklinde erişebilirim yorumsatiri klasörüde sadece saklama klasörü işlevi görecektir.
+
+// Link ve img karvarmları (3. ders)
+//Bu iki yapı seo çalışmalarında web sayfanın en üst sıralarda gözükmesini sağlamak.
+
+//LİNK
+//link i import Link from 'next/link' şeklinde çağırmaktayız.
+//<Link href="/about" >Yöndendirme Link denemesi</Link> normal html deki gibi href kullanıyoruz aynı şekilde " " larla değil obje olarak da sayfaları çağırabiliriz.
+//<Link href={{pathname:"about"}} >Yöndendirme Link denemesi 1</Link> <br/> şeklinde de yönlendirme yapabiliriz.
+//query olaylarını da <Link href="/about?name=berkant"> Yöndendirme Link denemesi </Link> şeklinde yazarak name alanları berkant olarak gözükecektir. Bu şekilde de sayfalarımızı yönlendirebiliriz. Bunu sağlayan yapı ? işareti ve arkaasından gelen şeylerdir.
+//<Link href="/about?name=berkant&surname=kaya" >Yöndendirme Link denemesi 2</Link><br/> //çoklu query yönlendirmelerinide bu şeklide yapabliriz
+// queriy olayını obje şeklinde <Link href={{pathname:"about", query:{name:"berkant"}} >Yöndendirme Link denemesi 3</Link> şeklinde kullanarak da yapabiliriz.
+//çoklu queriy olayını obje şeklinde kullanmak istersem <Link href={{pathname:"about", query:{name:"berkant" ,surname:kaya}} >Yöndendirme Link denemesi 3</Link> şeklinde kullanabilirim. 
