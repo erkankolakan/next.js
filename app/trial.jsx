@@ -16,3 +16,4 @@ export default Trial
 //Ama bizim en üste bu sayfanın "use client" olduğunu söylememiz gerekiyor.
 //Hangi sayfada gözükmesini istiyorsan o sayfaya bu sayfayı şmport etmen gerekir.
 
+

@@ -200,5 +200,6 @@ benmim web sayfam serverde çalıştığı için ordaki console ekranında conso
 !! ben app altında hangi dosyayı oluşturursam oluşturayım bu dosya server tabanlı olmakta. Yani server side readingi desteklemekte.
 server side reading kullanmak istemediğim durumlarda. useClide() parametresini kullanıyoruz.
 
+
 */
 
