@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Inter , Roboto } from 'next/font/google'
 import {cookies} from 'next/headers'
+import { resolve } from 'styled-jsx/css'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -17,8 +18,13 @@ const roboto = Roboto({
   //her yazı tipi için ayrı bir class oluşturmak gerekiyor. 
 })
 
+ // loading sayfasını denemek için bazı kodlar yazıyoruz
+const sleep = (ms) => {
+  return new Promise((resolve) => setTimeout(resolve, ms))
+}
 
-const Page = () => {
+const Page = async() => {
+  await sleep(3000)    
 
   const newCookies = cookies();
 
@@ -26,9 +32,10 @@ const Page = () => {
 
   // newCookies.set('kolakan' , 21) şuan nextjs de bu işlemleri yapamıyoruz ama yakında gelecek.
  
+
+
   return (
     <>
-    
       <Link href="/about" className={inter.className} >Yöndendirme Link denemesi</Link> <br/>
       <Link href={{pathname:"about"}} >Yöndendirme Link denemesi 1</Link> <br/>
 
@@ -59,6 +66,9 @@ const Page = () => {
     <div className={inter.className}>Inter yazı tipi</div>
   
     <div className={roboto.className}>Roboto yazı tipi</div>
+
+----------------------------------------------------------------------------------------------------------
+
     
 
 
@@ -76,6 +86,7 @@ const Page = () => {
 
 export default Page
 
+//page.js ve layout.js dosyaları nextjs e özgü dosyalandırma ismidir değiştirilemez.
 
 //page bizim için ana sayfayı temsil eder.
 
@@ -155,21 +166,38 @@ getAll() dersek tüm cookiesileri getirir. Sadece cookieslerden birini seçmek i
 
   newCookies.set("xxx", 20) yazarsak biz cookies kısmına 20 değerine sahip xxx değerini göndericektim.
 
-  
+*/
+
+/*
+ layout.js LAYOUT.JS LOADİN.JS  NOT-FOUND.JS HEAD.JS
+
+bunlarda yine page.js ve layout.js gibi nextjs e özgü dosya isimleri değiştirelemez yapıdalar.
+
+Biz reactta header ve footer ı herzaman sayfanın en üstünde görünsün diye roouter kısmında en süte koyuyorduk fln filan burda bu düzeni layout sayfasında sağlıyoruz.
+
+const Layout = ({children}) => {
+  return (
+    <html lang='en'>
+        <body>
+          <header>BU KISIM HEADER</header> !!!
+            {children}
+          <footer>BU KISIM FOOTER</footer> !!!
+        </body>
+    </html>
+  )
+}
+
+! koyduğum yerlere componenet çağırsakda olur.
+
+  loading.jsx
+  loading sayfasını açmak ve sadece içerisine sayfa yüklendiği zaman gösterilecek olan şeyleri yazacak olman yeterli.
 
 
+  not-found.jsx
+  sadece sayfayı açamak ve açılmayan sayfalarda gössterilecek olan şeyi yazman yeterli
 
-
-
-
-
-
-
-
-
-
-
-
+  head.jsx
+  sayfasını açman ve div yerine title taglarını kullanarak sayfanın başlığını belirlemen gerek.
 
 */
 
