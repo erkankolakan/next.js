@@ -252,7 +252,7 @@ Redirect gibi otomatik yönlendirmenin aksine bazi tıklamalar tetiklenmeler son
 */
 
 /*
-  USESEARCHPARAMS
+  USESEARCHPARAMS (about/page sayfasında anlatımını yaptım)
   url üzerinden gelen bilgileri teker teker parçalayarak kullanmamızı sağlar. Oldukça öenmli yapıdır aslında.
   bununda importu diğerlerininki gibi " import { useRouter } from 'next/navigation' "
 
@@ -264,10 +264,25 @@ Redirect gibi otomatik yönlendirmenin aksine bazi tıklamalar tetiklenmeler son
   
   console.log("url deki name nin value değeri",name)
 
-  temel iskelet yapıları bu şekilde. 
-
-
+  temel iskelet yapıları bu şekilde.
 */
 
 
 
+/*
+
+  USEPATHNAME (about/page sayfasında anlatımını yaptım)
+usePathName yönlendirildiğimiz sayfanın pathname sini almamızı sağlar mesela.
+localhosr:3000/about?asdaadasd/22a545 yazabilir ama pathname sadece about kısmını alır. Onu da diğerleri gibi 
+import { usePathname } from 'next/navigation' şeklinde çağırıyoruz.
+
+  temel açıdan kullanımı aşağıdaki gibi 
+
+
+  import { usePathname } from 'next/navigation'
+
+  const pathname = usePathname()
+  
+  console.log(pathname)
+
+*/
