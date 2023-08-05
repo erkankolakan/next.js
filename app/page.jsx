@@ -39,7 +39,7 @@ const Page = async() => {
 
   //redirect işlemleri, burdaki amaç belirli birşey olduğu zaman otomatik bir şekilde sayfa yönlendirmesi olması. Mesela bu örnekte nav1 ture olduğu zaman otomatik olarka erkan sayfasına gidecek. Redirectto bir buttona tıklandığı zaman sayfa yönlendirmesi yapmaya kalkarsak hata ile karşılaşırız. Bir buttona tıklandığı zamana yönlendirme işlemleri useRouter altında inceleyeceğiz. 
 
-  let nav1 = false;
+  let nav1 = false; //burayı true yaparsam sayfa yüklendiği zaman otomatik bir şekilde erkan sayfasına gider. 
 
   if(nav1){
     redirect("/erkan") 
@@ -83,6 +83,13 @@ const Page = async() => {
 ----------------------------------------------------------------------------------------------------------
 
 <Trial/>
+
+
+
+
+
+
+
     </>
   )
 }
@@ -217,7 +224,36 @@ server side reading kullanmak istemediğim durumlarda. useClide() parametresini 
    Redirect, useRouter, useSearchParams, usePathname
 
    REDİRECT
-  Bunun amacı sayfa üzerinde yönlendirmeler yapmak. Redirect kulanabilemk için sitenin server side de çalışması lazım. Nextjs de zaten bize bunu sağlıyordu. O yüzden bizim işimize yaran bir durum. 
+  Bunun amacı sayfa üzerinde yönlendirmeler yapmak. Redirect kulanabilemk için sitenin server side de çalışması lazım. Nextjs de zaten bize bunu sağlıyordu. O yüzden bizim işimize yaran bir durum.
+  redirectin  import etmesi aşağıdaki gibi.
+    import { redirect } from 'next/navigation'
+
+*/
+
+/*
+
+  USEROUNTER (bu kısım trial sayfasında anlatıcak)
+Redirect gibi otomatik yönlendirmenin aksine bazi tıklamalar tetiklenmeler sonucu yönlendirme işlemleri için kullanılır.
+Özetle eğer bir butonumuz varsa ve tıklandıktan sonra başka sayfaya yönlendirme yapılamsını istiyorsak useRounter kullanıyoruz.
+İmport etme işlemi redirect gibi " import { useRouter } from 'next/navigation' " şeklinde import edilir. 
+
+  useRouter in 4 tane parametresi vardır.
+  push, refresh, back, forvırt
+
+  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  Eğer ben bir sayfada useRouter kullanacaksam o sayfada clinetside işlemlerini yapılması gerekiyor. Bu oldukça önemlidir.
+  Bir sayfası clientside yapmak da oldukça kolay zaten, sadece sayfanın en üstüne "use client" yazmamız yeterli.
+  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    push beni farklı bir sayfaya yönlendirir.
+    back aslında geri butonu yönlendirildiğin sayfanan geri geliyorsun.
+    forward bir ileri sayfaya gidiyorsun
+    refresh sayfayı yeniler. Klavyedeki F5 görevini görür.
+
+
+
+
+
+
 
 
 
