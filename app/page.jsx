@@ -5,6 +5,7 @@ import { Inter , Roboto } from 'next/font/google'
 import {cookies} from 'next/headers'
 import { resolve } from 'styled-jsx/css'
 import Trial from './trial'
+import { redirect } from 'next/navigation'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -33,8 +34,18 @@ const Page = async() => {
 
   // newCookies.set('kolakan' , 21) şuan nextjs de bu işlemleri yapamıyoruz ama yakında gelecek.
  
+  console.log("erkan") //webdeki  consolede gözükmezken vscodeki console de gözükür.
 
-  console.log("erkan")
+
+  //redirect işlemleri, burdaki amaç belirli birşey olduğu zaman otomatik bir şekilde sayfa yönlendirmesi olması. Mesela bu örnekte nav1 ture olduğu zaman otomatik olarka erkan sayfasına gidecek. Redirectto bir buttona tıklandığı zaman sayfa yönlendirmesi yapmaya kalkarsak hata ile karşılaşırız. Bir buttona tıklandığı zamana yönlendirme işlemleri useRouter altında inceleyeceğiz. 
+
+  let nav1 = false;
+
+  if(nav1){
+    redirect("/erkan") 
+  }
+
+
 
   return (
     <>
@@ -200,6 +211,14 @@ benmim web sayfam serverde çalıştığı için ordaki console ekranında conso
 !! ben app altında hangi dosyayı oluşturursam oluşturayım bu dosya server tabanlı olmakta. Yani server side readingi desteklemekte.
 server side reading kullanmak istemediğim durumlarda. useClide() parametresini kullanıyoruz.
 
-
 */
 
+/*
+   Redirect, useRouter, useSearchParams, usePathname
+
+   REDİRECT
+  Bunun amacı sayfa üzerinde yönlendirmeler yapmak. Redirect kulanabilemk için sitenin server side de çalışması lazım. Nextjs de zaten bize bunu sağlıyordu. O yüzden bizim işimize yaran bir durum. 
+
+
+
+*/
