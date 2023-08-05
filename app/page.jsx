@@ -250,3 +250,24 @@ Redirect gibi otomatik yönlendirmenin aksine bazi tıklamalar tetiklenmeler son
     refresh sayfayı yeniler. Klavyedeki F5 görevini görür.
 
 */
+
+/*
+  USESEARCHPARAMS
+  url üzerinden gelen bilgileri teker teker parçalayarak kullanmamızı sağlar. Oldukça öenmli yapıdır aslında.
+  bununda importu diğerlerininki gibi " import { useRouter } from 'next/navigation' "
+
+  import { useRouter } from 'next/navigation'
+
+  const searchParams = useSearchParams();
+  const name = searchParams.get("name") 
+  // ben aslında şuan linkteki name keyine sahip olanın value değerini alıyorum.
+  
+  console.log("url deki name nin value değeri",name)
+
+  temel iskelet yapıları bu şekilde. 
+
+
+*/
+
+
+
