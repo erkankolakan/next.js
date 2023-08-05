@@ -249,12 +249,4 @@ Redirect gibi otomatik yönlendirmenin aksine bazi tıklamalar tetiklenmeler son
     forward bir ileri sayfaya gidiyorsun
     refresh sayfayı yeniler. Klavyedeki F5 görevini görür.
 
-
-
-
-
-
-
-
-
 */
