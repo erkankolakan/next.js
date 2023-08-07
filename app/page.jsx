@@ -47,6 +47,41 @@ const Page = async() => {
 
 
 
+  // fetch data işlemleri
+  const fetchData = async () => {
+    const res = await fetch('https://restcountries.com/v3.1/name/eesti')
+    return res.json(); //mutlaka gelen veriyi return etmek zorundayız.
+  }
+
+  const fetchData2 = async () => {
+    const res2 = await fetch("https://restcountries.com/v3.1/name/deutschland")
+    return res2.json();
+  }
+
+
+  // const data = await fetchData();
+  // const data2 = await fetchData2();
+  // /*
+  //   Çoklu veri çekme işlemlerinde sıkıntı olan şey biz await yazdığımız için data verisi çekilmeden data2 verisi alınmıyor.
+  // */
+
+  const data = fetchData();
+  const data2 = fetchData2();
+
+
+
+  const resultData = await Promise.all([
+    data,
+    data2
+  //çoklu veri çeklme işlemlerinde promise kullanmak aşırı derecede avantaj içermekte.
+  ])
+
+  // console.log(data, "data")
+  console.log(resultData, "resultData")
+  
+
+
+
   return (
     <>
       <Link href="/about" className={inter.className} >Yöndendirme Link denemesi</Link> <br/>
@@ -83,11 +118,6 @@ const Page = async() => {
 ----------------------------------------------------------------------------------------------------------
 
 <Trial/>
-
-
-
-
-
 
 
     </>
@@ -284,5 +314,47 @@ import { usePathname } from 'next/navigation' şeklinde çağırıyoruz.
   const pathname = usePathname()
   
   console.log(pathname)
+
+*/
+
+/*
+    Data Fetching işlmeleri
+    React da normalde data çekerken useEffect useState fln kullanırken Nextjs kullanırken bunları kullanamayız ya da kullanmak istersek kullanacağımız şeyler use ile başladığı için sayfanın en başına " use client " yazmamız gerekir.
+
+    const fetchData = async () => {: Bu satır, "fetchData" adında bir isim verilmiş bir asenkron fonksiyon (async function) tanımlar. Asenkron fonksiyonlar, içlerinde "await" anahtar kelimesi kullanılarak beklenen bir işlemin tamamlanmasını beklemek için kullanılır. "async" anahtar kelimesi ise fonksiyonun asenkron olduğunu belirtir.
+
+
+
+    nextjs de veri çekmek.
+
+    ++tek bir tane linkden veri çekerken bu şekilde ver çekiyoruz
+
+    const fetchData = async () => {
+    const res = await fetch('https://restcountries.com/v3.1/name/eesti')
+    return res.json(); //mutlaka gelen veriyi return etmek zorundayız.
+
+
+    const data = fetchData();
+
+
+    ++birden fazla linkden veri çekerken üstekine artı olarak Promise kullanarak çekiyoruz ki await yapıları bir birini beklemesin.
+
+    const data = fetchData();
+    const data2 = fetchData2();
+
+
+
+  const resultData = await Promise.all([
+    data,
+    data2
+  //çoklu veri çeklme işlemlerinde promise kullanmak aşırı derecede avantaj içermekte.
+  ])
+
+  
+
+
+  }
+
+
 
 */
