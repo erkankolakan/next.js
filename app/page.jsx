@@ -350,11 +350,15 @@ import { usePathname } from 'next/navigation' şeklinde çağırıyoruz.
   //çoklu veri çeklme işlemlerinde promise kullanmak aşırı derecede avantaj içermekte.
   ])
 
-  
-
-
   }
 
+*/
 
+/*
+  
+    generateStaticParams()
+  Bu yapının amacı web sitenin sağlıklı çalışması amacıyla yapılmıştır. Daha hızlı çalışması sağlar. Çekilen verinin tekrar tekrar çekilmeisini engeller.
+  Yani biz bir ürünün detaylar sayfasına gittik ve veri çektik bu çektiğimiz veri generateStaticParams() sayesinde çekilen veri html olarak static bir şekilde kaydedildi. Biz daha sonra aynı ürünün detaylar sayfasına gidersek bu kaydedilen html verisi üzerinden verileri kullacak yani biz aynı sayfa için tekrar tekrar veri çekmek zorunda kalmayacağız. 
 
+  ! Bu yapının kullanımı app/id/page sayfasında anlatıldı.
 */
