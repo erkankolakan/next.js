@@ -110,6 +110,10 @@ const Page = async() => {
       src="https://images.pexels.com/photos/12825186/pexels-photo-12825186.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
       width={400} height={400} />
 
+{/* <Image
+      src="https://images.pexels.com/photos/12825186/pexels-photo-12825186.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      fill /> */}
+
 ----------------------------------------------------------------------------------------------------------
     <div className={inter.className}>Inter yazı tipi</div>
   
