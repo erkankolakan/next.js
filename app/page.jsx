@@ -369,6 +369,16 @@ import { usePathname } from 'next/navigation' şeklinde çağırıyoruz.
 
   bu konu anlaşılmadı, next.js inşa aşamasında olduğu için eski yöntemle yapılıyordu. Yeni yöntem geldiği zaman bu kısım güüncellenecek.
 
+*/
+
+
+/*
+    Middleware
+  middleware aslında örnekle açıklayacak olursak bir sayfa girdiğimiz zaman login yapmadan ürünleri gezebiliyoruz ama iş ödeme kısmına geldiği zaman login yapmamızı isteyen bir olay.
+
+  middleware yi kullanmak için nextjs bize klasör altında middleware.js adında bir sayfa açmamızı ister. Busayfa bir tane request ister.
+  Aslında backend kısmından bir token alırız middleware ara katman olarak gelir biz ödeme yaparken bir tokene sahipsek ödeme işleminin devam etmesinei eğer tokene sahip değilsek otomatik olarka yönlendirme işleminin yapılmasını sağlar. 
+
 
 
 
