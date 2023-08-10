@@ -379,7 +379,20 @@ import { usePathname } from 'next/navigation' şeklinde çağırıyoruz.
   middleware yi kullanmak için nextjs bize klasör altında middleware.js adında bir sayfa açmamızı ister. Busayfa bir tane request ister.
   Aslında backend kısmından bir token alırız middleware ara katman olarak gelir biz ödeme yaparken bir tokene sahipsek ödeme işleminin devam etmesinei eğer tokene sahip değilsek otomatik olarka yönlendirme işleminin yapılmasını sağlar. 
 
+*/
 
 
+/*
+    Environment + ModuleCSS
 
+    Next.js de modue css kullanıldığı için css sayfalarını
+    -> page.module.css
+    olarak açıyoruz.
+    bir sayfaya import edeceğimiz zaman da
+    -> import styles from './page.modules.css'
+    şeklindecağırıyoruz. Next.js de artık class ların içerisine isim vermektense importda yazdığımız styles leri yazıyoruz. className={styles.container} şeklinde kullanıyoruz.
+    !! biz css isimlerinide - kullanamyız. örneğin className={styles.container-one} şeklinde kullanırsak hata alırız. Eğer illa bu şekilde kullanmak istersek şağakıdaki şekilde kullanabiliriz.
+    className={styles["container-one"]} eğer biz birden fazla class name kullanmak istersek.
+    <div className={`${styles["container-one"]} ${styles["lg-size"]}`}> asdasdasd </div> bu şekilde kullanmamız gerekir.
+  
 */
