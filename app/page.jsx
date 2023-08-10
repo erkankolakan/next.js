@@ -362,3 +362,14 @@ import { usePathname } from 'next/navigation' şeklinde çağırıyoruz.
 
   ! Bu yapının kullanımı app/id/page sayfasında anlatıldı.
 */
+
+/*
+    API Routes
+  api routes oluşturmak istiyorsam app altında api adında bir klasör oluşturmam gerekir. Daha sonra ben postlarla alakalı routes yapmak istiyorsam post adında bir klasör oluşturup render olmasını sağlayan yapılarıda index.jsx olarak belirtmeliyim.
+
+  bu konu anlaşılmadı, next.js inşa aşamasında olduğu için eski yöntemle yapılıyordu. Yeni yöntem geldiği zaman bu kısım güüncellenecek.
+
+
+
+
+*/
