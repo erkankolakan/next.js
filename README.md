@@ -1,4 +1,4 @@
-# Beraber Next.js öğrenelim
+# `Beraber Next.js öğrenelim`
 
 ## Neden Next.js öğrenmeliyiz ?
 Next.js, React tabanlı bir web framework'üdür. 2023 yılında Next.js öğrenmenin birkaç nedeni vardır:
